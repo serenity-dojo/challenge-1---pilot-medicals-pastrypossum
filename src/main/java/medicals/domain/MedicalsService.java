@@ -24,7 +24,7 @@ public class MedicalsService {
     public LocalDate findDateLimitForNextMedical(Pilot pilot) {
         LocalDate dateOfLastMedical = dateOfMedicalFor(pilot);
 
-        long pilotAge = ChronoUnit.YEARS.between( pilot.getBirthDate() , dateOfLastMedical );
+        long pilotAge = pilot.getPilotAge();
 
         LocalDate anniveraryOfLastMedical;
         switch (pilot.getPilotClass()) {
